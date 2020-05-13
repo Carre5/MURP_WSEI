@@ -12,46 +12,46 @@ namespace WSEI_MURP_v1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrdersController : ControllerBase
+    public class CarsController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public OrdersController(DataContext context)
+        public CarsController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: api/Order
+        // GET: api/Cars
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        public async Task<ActionResult<IEnumerable<Car>>> GetCars()
         {
-            return await _context.Orders.ToListAsync();
+            return await _context.Cars.ToListAsync();
         }
 
-        // GET: api/Order/5
+        // GET: api/Cars/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(long id)
+        public async Task<ActionResult<Car>> GetCar(long id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var car = await _context.Cars.FindAsync(id);
 
-            if (order == null)
+            if (car == null)
             {
                 return NotFound();
             }
 
-            return order;
+            return car;
         }
 
-        // PUT: api/Order/5
+        // PUT: api/Cars/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrder(long id, Order order)
+        public async Task<IActionResult> PutCar(long id, Car car)
         {
-            if (id != order.Id)
+            if (id != car.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(order).State = EntityState.Modified;
+            _context.Entry(car).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace WSEI_MURP_v1.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OrderExists(id))
+                if (!CarExists(id))
                 {
                     return NotFound();
                 }
@@ -72,35 +72,35 @@ namespace WSEI_MURP_v1.Controllers
             return NoContent();
         }
 
-        // POST: api/Order
+        // POST: api/Cars
         [HttpPost]
-        public async Task<ActionResult<Order>> PostOrder(Order order)
+        public async Task<ActionResult<Car>> PostCar(Car car)
         {
-            _context.Orders.Add(order);
+            _context.Cars.Add(car);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetOrder", new { id = order.Id }, order);
+            return CreatedAtAction("GetCar", new { id = car.Id }, car);
         }
 
-        // DELETE: api/Order/5
+        // DELETE: api/Cars/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Order>> DeleteOrder(long id)
+        public async Task<ActionResult<Car>> DeleteCar(long id)
         {
-            var order = await _context.Orders.FindAsync(id);
-            if (order == null)
+            var car = await _context.Cars.FindAsync(id);
+            if (car == null)
             {
                 return NotFound();
             }
 
-            _context.Orders.Remove(order);
+            _context.Cars.Remove(car);
             await _context.SaveChangesAsync();
 
-            return order;
+            return car;
         }
 
-        private bool OrderExists(long id)
+        private bool CarExists(long id)
         {
-            return _context.Orders.Any(e => e.Id == id);
+            return _context.Cars.Any(e => e.Id == id);
         }
     }
 }
