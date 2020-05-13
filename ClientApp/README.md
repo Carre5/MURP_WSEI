@@ -1,6 +1,6 @@
-# WSEI_MURP_v1
+# MURPApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
 ## Development server
 
