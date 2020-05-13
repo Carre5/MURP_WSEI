@@ -11,7 +11,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
   sideNavOpened = true;
   sideNavMode: 'side' | 'over' = 'side';
   toolBarHeight = 64;
+
   private readonly mediaWatcher: Subscription;
+
   constructor(media: MediaObserver) {
     this.mediaWatcher = media.media$.subscribe((change: MediaChange) => {
       if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {

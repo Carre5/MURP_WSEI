@@ -10,7 +10,7 @@ const routes: Routes = [
     //canActivate: [AuthGuard]
   },
   {
-    path: 'login',
+    path: '',
     loadChildren: () => import('./core/admin/login/login.module').then(m => m.LoginModule)
   },
   {
