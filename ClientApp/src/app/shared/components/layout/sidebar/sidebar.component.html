@@ -1,1 +1,47 @@
-<p>sidebar works!</p>
+<mat-nav-list>
+    <a
+        *ngFor="let item of routes"
+        mat-list-item
+        [routerLinkActive]="'active'"
+        [routerLink]="['/', item.path]"
+    >
+        <mat-icon class="sidenav-icon" color="primary">{{ item.data.icon }}</mat-icon>
+        {{ item.data.text }}
+    </a>
+    <a>
+        <mat-list-item>
+            <mat-icon class="sidenav-icon" color="primary">local_library</mat-icon>
+            Orders
+        </mat-list-item>
+    </a>
+    <a>
+        <mat-list-item>
+            <mat-icon class="sidenav-icon" color="primary">search</mat-icon>
+            Search
+        </mat-list-item>
+    </a>
+    <a>
+        <mat-list-item>
+            <mat-icon class="sidenav-icon" color="primary">business</mat-icon>
+            Company
+        </mat-list-item>
+    </a>
+    <a>
+        <mat-list-item>
+            <mat-icon class="sidenav-icon" color="primary">local_shipping</mat-icon>
+            Fleet
+        </mat-list-item>
+    </a>
+    <a>
+        <mat-list-item>
+            <mat-icon class="sidenav-icon" color="primary">credit_card</mat-icon>
+            Payments
+        </mat-list-item>
+    </a>
+    <a>
+        <mat-list-item>
+            <mat-icon class="sidenav-icon" color="primary">pie_chart</mat-icon>
+            Reports
+        </mat-list-item>
+    </a>
+</mat-nav-list>

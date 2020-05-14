@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from 'src/app/shared/components/layout/layout.component';
+import { LayoutComponent } from '../../shared/components/layout/layout.component';
 import { childRoutes } from './child-routes';
 
 
@@ -10,8 +10,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: '/main',
-        redirectTo: 'dashboard'
+        path: ''
+        // redirectTo: 'orders'
       },
       ...childRoutes
     ]

@@ -4,23 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OrdersComponent } from './features/orders/orders.component';
-import { OrderDetailComponent } from './features/orders/order-detail/order-detail.component';
-import { OrderListComponent } from './features/orders/order-list/order-list.component';
-import { OrderItemComponent } from './features/orders/order-list/order-item/order-item.component';
 import { SearchComponent } from './features/orders/search/search.component';
 import { TripComponent } from './features/trip/trip.component';
 import { CargoComponent } from './features/trip/cargo/cargo.component';
 import { MapComponent } from './features/trip/map/map.component';
 import { PaymentComponent } from './features/trip/payment/payment.component';
-import { CompanyComponent } from './features/company/company.component';
 import { FleetComponent } from './features/company/fleet/fleet.component';
 import { CarComponent } from './features/company/fleet/car/car.component';
 import { CarItemComponent } from './features/company/fleet/car/car-item/car-item.component';
 import { DriverComponent } from './features/company/fleet/driver/driver.component';
 import { DriverItemComponent } from './features/company/fleet/driver/driver-item/driver-item.component';
-import { CompanySummaryComponent } from './features/company/company-summary/company-summary.component';
-import { CommentsComponent } from './features/comments/comments.component';
 import { CommentListComponent } from './features/comments/comment-list/comment-list.component';
 import { CommentItemComponent } from './features/comments/comment-list/comment-item/comment-item.component';
 import { UserDashboardComponent } from './features/pages/user-dashboard/user-dashboard.component';
@@ -45,23 +38,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
 
-    OrdersComponent,
-    OrderDetailComponent,
-    OrderListComponent,
-    OrderItemComponent,
     SearchComponent,
     TripComponent,
     CargoComponent,
     MapComponent,
     PaymentComponent,
-    CompanyComponent,
     FleetComponent,
     CarComponent,
     CarItemComponent,
     DriverComponent,
     DriverItemComponent,
-    CompanySummaryComponent,
-    CommentsComponent,
     CommentListComponent,
     CommentItemComponent,
     UserDashboardComponent,

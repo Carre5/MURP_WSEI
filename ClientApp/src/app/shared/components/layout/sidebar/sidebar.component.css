@@ -1,0 +1,11 @@
+.mat-nav-list {
+    width: 100%;  
+}
+
+.mat-list-item{
+    font-weight: bold;
+}
+
+.mat-icon {
+    margin-right: 15px;
+}

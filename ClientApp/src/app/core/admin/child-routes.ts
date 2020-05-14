@@ -1,21 +1,15 @@
 export const childRoutes = [
-    // {
-    //     path: 'dashboard',
-    //     loadChildren: () =>
-    //       import('./dashboard/dashboard.module').then(m => m.DashboardModule),
-    //     data: { icon: 'dashboard', text: 'Dashboard' }
-    // },
-    {
-        path: 'main',
-        loadChildren: () =>
-          import('./admin.module').then(m => m.AdminModule),
-        data: { icon: 'main', text: 'Main page' }
-    },
-    //   {
-    //     path: 'charts',
-    //     loadChildren: () =>
-    //       import('./charts/charts.module').then(m => m.ChartsModule),
-    //     data: { icon: 'bar_chart', text: 'Charts' }
-    //   },
+  {
+    path: 'orders',
+    loadChildren: () =>
+        import('../../features/orders/orders.module').then(m => m.OrdersModule),
+    data: { icon: 'local_library', text: 'Orders' }
+  },
+  {
+    path: 'company',
+    loadChildren: () =>
+        import('../../features/company/company.module').then(m => m.CompanyModule),
+    data: { icon: 'business', text: 'Company' }
+  }
 
 ];
