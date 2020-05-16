@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-
+  sideNavOpened = true;
+  sideNavMode: 'side' | 'over' = 'side';
   constructor() { }
 
   ngOnInit(): void {

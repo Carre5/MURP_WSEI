@@ -1,1 +1,5 @@
-<p>order-list works!</p>
+<app-order-item
+    *ngFor="let orderItem of orders"
+    [order]="orderItem">
+
+</app-order-item>

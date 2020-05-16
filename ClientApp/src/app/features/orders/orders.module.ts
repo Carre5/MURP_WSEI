@@ -4,8 +4,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { OrdersComponent } from './orders.component'
 import { OrdersRoutingModule } from './orders-routing.module'
@@ -22,6 +26,10 @@ import { OrderItemComponent } from './order-list/order-item/order-item.component
       MatTableModule,
       MatButtonModule,
       MatIconModule,
+      MatListModule,
+      MatSidenavModule,
+
+      ScrollingModule,
 
       OrdersRoutingModule
     ],
