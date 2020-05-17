@@ -8,28 +8,31 @@
 }
 
 .order-details{
-    height: 100%;
+    background-color: gold;
+
 }
 
-.flex-order-list{
-    flex: 1 1 100%; 
-    box-sizing: border-box; 
-    width: 30%;
+.order-list{
+
+    overflow: scroll;
 }
 
-.flex-order-details{
-    flex: 1 1 100%; 
-    box-sizing: border-box; 
-    width: 60%;
+
+.orders{
+    background-color: gold;
 }
 
-.sidenav-container {
-    flex: 1;
-    width: 65%;
+.details{
+    background-color: greenyellow;
+    /* position: sticky; */
 }
-.sidenav {
-    padding: 12px;
-    width: 36%;
-    background: white;
-    height: 100%;
+
+.order-menu{
+    background-color: sienna;
+    /* position: sticky; */
+}
+
+
+.orders-right-column{
+    position: absolute;
 }

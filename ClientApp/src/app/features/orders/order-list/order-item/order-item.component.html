@@ -1,42 +1,35 @@
 <div class="container mb20 ml5 mr20">
-    <mat-card >
-        <mat-card-header>
-                <div class="order-item-heared">
-                        <mat-card-title class="icon-possition">
-                            <mat-icon class="order-icon" color="primary">local_shipping</mat-icon>
-                            <div>{{ order.name }}</div>
-                        </mat-card-title>
+    <a class="order-link" (click)="onSelectedOrder()">  
+        <mat-card>
+            <mat-card-header>
+                    <div class="order-item-heared">
+                            <mat-card-title class="icon-possition">
+                                <mat-icon class="order-icon" color="primary">local_shipping</mat-icon>
+                                <div>{{ order.name }}</div>
+                            </mat-card-title>
+                    </div>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="icon-possition">
+                    <mat-icon class="order-icon" color="primary">event_available</mat-icon>
+                    <div>Start date: </div>
+                    <div class="order-data">{{ order.orderDate }}</div>
                 </div>
-                <span class="nav-spacer"></span>
-                <div class="order-item-actions" style="margin-right: 20px; margin-top: 8px">
-                    <mat-card-actions>
-                        <button mat-button>Do something</button>
-                        
-                    </mat-card-actions>
+                <div>
+                    <div>Description: </div>
+                    <div class="order-data">{{ order.description }}</div>
                 </div>
-
-        </mat-card-header>
-        <mat-card-content>
-            <div class="icon-possition">
-                <mat-icon class="order-icon" color="primary">event_available</mat-icon>
-                <div>Start date: </div>
-                <div class="order-data">{{ order.orderDate }}</div>
-            </div>
-            <div>
-                <div>Description: </div>
-                <div class="order-data">{{ order.description }}</div>
-            </div>
-            <div class="icon-possition">
-                <mat-icon class="order-icon" color="primary">place</mat-icon>
-                <div>Initial: </div>
-                <div class="order-data">{{ order.startingPoint }}</div>
-            </div>
-            <div class="icon-possition">
-                <mat-icon class="order-icon" color="primary">where_to_vote</mat-icon>
-                <div>Destination: </div>
-                <div class="order-data">{{ order.destination }}</div>
-            </div>
-        </mat-card-content>
-        
-    </mat-card>
+                <div class="icon-possition">
+                    <mat-icon class="order-icon" color="primary">place</mat-icon>
+                    <div>Initial: </div>
+                    <div class="order-data">{{ order.startingPoint }}</div>
+                </div>
+                <div class="icon-possition">
+                    <mat-icon class="order-icon" color="primary">where_to_vote</mat-icon>
+                    <div>Destination: </div>
+                    <div class="order-data">{{ order.destination }}</div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </a>
 </div>

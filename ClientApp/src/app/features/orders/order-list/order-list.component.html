@@ -1,5 +1,6 @@
 <app-order-item
     *ngFor="let orderItem of orders"
-    [order]="orderItem">
+    [order]="orderItem"
+    (orderSelected)="onOrderSelected(orderItem)">
 
 </app-order-item>

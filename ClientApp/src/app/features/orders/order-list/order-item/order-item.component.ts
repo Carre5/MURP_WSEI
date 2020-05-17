@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Order } from '../../order.model';
 
 @Component({
@@ -9,9 +9,15 @@ import { Order } from '../../order.model';
 export class OrderItemComponent implements OnInit {
   @Input() order: Order;
   
+  @Output() orderSelected = new EventEmitter<void>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelectedOrder(){
+    this.orderSelected.emit();
   }
 
 }

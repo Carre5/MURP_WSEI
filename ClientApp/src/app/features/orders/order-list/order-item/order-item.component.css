@@ -19,3 +19,7 @@
 .order-data{
     font-weight: bold;
 }
+
+.order-link{
+    text-decoration: none;
+}

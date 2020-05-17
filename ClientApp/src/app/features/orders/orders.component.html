@@ -1,11 +1,26 @@
-
-<div class="orders-container" fxLayout="row" fxFlexFill>
-    <mat-sidenav-container>
-        <mat-sidenav #snav class="sidenav mat-elevation-z10" [(mode)]="sideNavMode" [(opened)]="sideNavOpened">
-            <app-order-list></app-order-list>
-        </mat-sidenav>
-        <mat-sidenav-content class="order-details">
-            <app-order-detail></app-order-detail>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+<div class="order-container" >
+    <div fxLayout='row'>
+        <div fxFlex="33" >
+            <app-order-list class="order-list"
+                (orderAlreadySelected)="selectedOrder = $event"></app-order-list>
+        </div>
+        <div fxFlex="66" fxFlex="66">
+            <mat-grid-list  cols = "1" rowHeight="28em" gutterSize="1em">       
+                <mat-grid-tile class="details"
+                    [colspan] = "1"
+                    [rowspan] = "1">
+                    <app-order-detail 
+                        *ngIf="selectedOrder; else infoText"
+                        [order]="selectedOrder"></app-order-detail>
+                    <ng-template #infoText>
+                        <p>Wybierz Order</p>
+                    </ng-template>
+                </mat-grid-tile>
+                <mat-grid-tile class="order-menu"
+                    [colspan] = "1"
+                    [rowspan] = "1">DUPA CYCKI
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
 </div>
