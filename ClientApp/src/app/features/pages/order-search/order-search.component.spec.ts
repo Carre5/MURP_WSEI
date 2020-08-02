@@ -8,9 +8,9 @@ describe('OrderSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrderSearchComponent ]
+      declarations: [OrderSearchComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

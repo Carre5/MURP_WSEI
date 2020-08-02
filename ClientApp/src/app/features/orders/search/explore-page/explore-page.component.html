@@ -1,0 +1,34 @@
+<div class="mt10">
+  <mat-grid-list [cols]="breakpoint" rowHeight="3:2" [gutterSize]="'10px'" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let area of areas">
+      <div class="area-grid">
+        <mat-grid-list cols="2" rowHeight="3:2" [gutterSize]="'10px'">
+          <a class="explore-link" >
+            <mat-grid-tile *ngFor="let item of grid | myfilter:area"
+                           [colspan]="item.cols"
+                           [rowspan]="item.rows"
+                           (click)="onSelectedExploredOrder(item)">
+
+
+              <div fxLayout="column" class="area_grid_container">
+                <app-explore-item fxFlex class="area-grid-item"
+                                  [order]="item"
+                                  [area]="area"
+                                  [selectedTile]="item"
+                                  [infoArea]="infoArea"></app-explore-item>
+              </div>
+
+
+
+            </mat-grid-tile>
+          </a>
+
+        </mat-grid-list>
+      </div>
+
+
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+
+</div>

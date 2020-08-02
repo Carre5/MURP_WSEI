@@ -1,33 +1,36 @@
-
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>{{ order.name }}</mat-card-title>
-        <mat-card-subtitle>Details about your order</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-            <div class="icon-possition">
-                <mat-icon class="order-icon" color="primary">event_available</mat-icon>
-                <div>Start date: </div>
-                <div class="order-data">{{ order.orderDate }}</div>
-            </div>
-            <div>
-                <div>Description: </div>
-                <div class="order-data">{{ order.description }}</div>
-            </div>
-            <div class="icon-possition">
-                <mat-icon class="order-icon" color="primary">place</mat-icon>
-                <div>Initial: </div>
-                <div class="order-data">{{ order.startingPoint }}</div>
-            </div>
-            <div class="icon-possition">
-                <mat-icon class="order-icon" color="primary">where_to_vote</mat-icon>
-                <div>Destination: </div>
-                <div class="order-data">{{ order.destination }}</div>
-            </div>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button color="primary">Order</button>
-        <button mat-raised-button color="accent">Details</button>
-        <button mat-raised-button color="warn">Delete</button>
-    </mat-card-actions>
-</mat-card>
+<div fxLayout class="order-details-container">
+  <div fxFlex="33%" class="order-details-details">
+    <mat-list>
+      <mat-list-item>
+        <mat-icon color="primary">where_to_vote</mat-icon>
+        <span>Location:&nbsp;</span>
+        <span>{{ order.location }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon color="primary">play_arrow</mat-icon>
+        <span>Start date:&nbsp;</span>
+        <span>{{ order.dateStart | date:"dd/MM/yyyy"  }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon color="primary">stop</mat-icon>
+        <span>End date:&nbsp;</span>
+        <span>{{ order.dateEnd | date:"dd/MM/yyyy" }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon color="primary">local_shipping</mat-icon>
+        <span>Car:&nbsp;</span>
+        <span>{{ order.carRegistrationNumber }}</span>
+        <span *ngIf="isIconVisible">, driver required&nbsp;</span>
+        <!--<mat-icon color="primary" *ngIf="isIconVisible">emoji_people</mat-icon>-->
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon color="primary">credit_card</mat-icon>
+        <span>Price:&nbsp;</span>
+        <span>{{ order.priceMin }}</span>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div fxFlex="67%" class="order-details-map">
+    <app-order-map></app-order-map>
+  </div>
+</div>

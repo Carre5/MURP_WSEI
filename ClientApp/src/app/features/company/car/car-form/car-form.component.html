@@ -1,0 +1,34 @@
+<h2>Add Car</h2>
+<form [formGroup]="carForm" class="car-form">
+  <label>
+    Mark:
+    <input type="text" formControlName="mark">
+    <p class="error" *ngIf="carForm.controls.mark.invalid && carForm.controls.mark.dirty">This field is required</p>
+  </label>
+  <label>
+    Model:
+    <input type="text" formControlName="model">
+    <p class="error" *ngIf="carForm.controls.model.invalid && carForm.controls.model.dirty">This field is required</p>
+  </label>
+  <label>
+    Year:
+    <input type="text" formControlName="year">
+    <p class="error" *ngIf="carForm.controls.year.invalid && carForm.controls.year.dirty">This field is required</p>
+  </label>
+  <label>
+    Plate:
+    <input type="text" formControlName="plate">
+    <p class="error" *ngIf="carForm.controls.plate.invalid && carForm.controls.plate.dirty">This field is required</p>
+  </label>
+  <label>
+    Price:
+    <input type="number" formControlName="price">
+    <p class="error" *ngIf="carForm.controls.price.invalid && carForm.controls.price.dirty">This field is required</p>
+  </label>
+  <label>
+    Capacity:
+    <input type="number" formControlName="capacity">
+    <p class="error" *ngIf="carForm.controls.capacity.invalid && carForm.controls.capacity.dirty">This field is required</p>
+  </label>
+  <button mat-raised-button [disabled]="carForm.invalid" (click)="submit()">Save</button>
+</form>

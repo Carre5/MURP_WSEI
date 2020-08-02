@@ -1,0 +1,25 @@
+<div class="layout-container">
+    <app-menu-bar (sideNavToggled)="snav.toggle()" (searchNavToggled)="receiveStat($event)"></app-menu-bar>
+
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #snav class="sidenav mat-elevation-z10" [(mode)]="sideNavMode" [(opened)]="sideNavOpened">
+            <app-sidebar></app-sidebar>
+        </mat-sidenav>
+        <mat-sidenav-content>
+
+            <main class="main-container">
+
+                <mat-drawer-container class="search-container" hasBackdrop="false">
+                    <mat-drawer class="searchNav ml20" #searchNav mode="side" position="end" [(opened)]="searchNavOpened">
+                        <app-search></app-search>
+                    </mat-drawer>
+                    <mat-drawer-content class="search-content">
+                        <!--<div class="app-window">-->
+                        <router-outlet></router-outlet>
+                        <!--</div>-->
+                    </mat-drawer-content>
+                </mat-drawer-container>
+            </main>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

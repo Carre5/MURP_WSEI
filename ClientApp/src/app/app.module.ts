@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchComponent } from './features/orders/search/search.component';
 import { TripComponent } from './features/trip/trip.component';
 import { CargoComponent } from './features/trip/cargo/cargo.component';
 import { MapComponent } from './features/trip/map/map.component';
@@ -24,8 +24,6 @@ import { AccountSetupComponent } from './core/admin/account-setup/account-setup.
 import { UserProfileComponent } from './core/admin/user-profile/user-profile.component';
 import { SettingsPageComponent } from './core/admin/settings-page/settings-page.component';
 
-import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatMenuModule } from '@angular/material/menu';
@@ -36,47 +34,44 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
+    declarations: [
     AppComponent,
+        TripComponent,
+        CargoComponent,
+        MapComponent,
+        PaymentComponent,
+        FleetComponent,
+        CarComponent,
+        CarItemComponent,
+        DriverComponent,
+        DriverItemComponent,
+        CommentListComponent,
+        CommentItemComponent,
+        UserDashboardComponent,
+        CompaniesListComponent,
+        OrderSearchComponent,
+        AccountSetupComponent,
+        UserProfileComponent,
+        SettingsPageComponent
+    ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+      HttpClientModule,
 
-    SearchComponent,
-    TripComponent,
-    CargoComponent,
-    MapComponent,
-    PaymentComponent,
-    FleetComponent,
-    CarComponent,
-    CarItemComponent,
-    DriverComponent,
-    DriverItemComponent,
-    CommentListComponent,
-    CommentItemComponent,
-    UserDashboardComponent,
-    CompaniesListComponent,
-    OrderSearchComponent,
-    AccountSetupComponent,
-    UserProfileComponent,
-    SettingsPageComponent,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
 
-    PageNotFoundComponent
-  ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
+        FlexLayoutModule,
 
-    FlexLayoutModule,
-
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatFormFieldModule
-  
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+        MatMenuModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatFormFieldModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

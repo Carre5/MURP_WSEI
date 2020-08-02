@@ -7,19 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   onLogin() {
     localStorage.setItem('isLoggedin', 'true');
-    this.router.navigate(['/main']);
+    this.router.navigate(['']);
   }
 
   onSingUp() {
     this.router.navigate(['/signup']);
   }
-
 }

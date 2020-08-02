@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fleet.component.css']
 })
 export class FleetComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

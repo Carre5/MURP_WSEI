@@ -1,0 +1,30 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+  enviroment: "MURP_WSEI"
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+- script: |
+    cd ClientApp
+    npm install -g @angular/cli
+    npm install
+    ng build --prod
+  displayName: 'npm install and build'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: './WSEI_MURP_v1.csproj'

@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-summary.component.css']
 })
 export class CompanySummaryComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-comment-item',
-  templateUrl: './comment-item.component.html',
-  styleUrls: ['./comment-item.component.css']
+    selector: 'app-comment-item',
+    templateUrl: './comment-item.component.html',
+    styleUrls: ['./comment-item.component.css']
 })
 export class CommentItemComponent implements OnInit {
+    constructor() { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {
+    }
 }

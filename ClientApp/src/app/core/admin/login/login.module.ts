@@ -12,17 +12,17 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FlexLayoutModule,
-    MatInputModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    LoginRoutingModule
-  ],
-  declarations: [LoginPageComponent, SignUpPageComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FlexLayoutModule,
+        MatInputModule,
+        MatCardModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        LoginRoutingModule
+    ],
+    declarations: [LoginPageComponent, SignUpPageComponent]
 })
-export class LoginModule {}
+export class LoginModule { }

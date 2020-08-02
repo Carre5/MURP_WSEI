@@ -1,26 +1,79 @@
-<div class="order-container" >
-    <div fxLayout='row'>
-        <div fxFlex="33" >
-            <app-order-list class="order-list"
-                (orderAlreadySelected)="selectedOrder = $event"></app-order-list>
+
+      <div fxLayout="row" class="my-orders-container">
+        <div fxFlex="400px" class="my-orders-left">
+          <div class="mt20">
+            <!--<button mat-raised-button color="primary" (click)="list.getAllOrders()">Get all orders</button>-->
+            <app-order-list #list
+                            (orderAlreadySelected)="selectedOrder=$event;
+                            orderDetailsPanelExpanded=true;
+                            orderModifyPanelExpanded=false"
+                            [readOrders]="orders"
+                            [newList]="newOrderList"></app-order-list>
+          </div>
         </div>
-        <div fxFlex="66" fxFlex="66">
-            <mat-grid-list  cols = "1" rowHeight="28em" gutterSize="1em">       
-                <mat-grid-tile class="details"
-                    [colspan] = "1"
-                    [rowspan] = "1">
-                    <app-order-detail 
-                        *ngIf="selectedOrder; else infoText"
-                        [order]="selectedOrder"></app-order-detail>
-                    <ng-template #infoText>
-                        <p>Wybierz Order</p>
-                    </ng-template>
-                </mat-grid-tile>
-                <mat-grid-tile class="order-menu"
-                    [colspan] = "1"
-                    [rowspan] = "1">DUPA CYCKI
-                </mat-grid-tile>
-            </mat-grid-list>
+        <div fxFlex class="my-orders-right">
+          <div fxLayout="column" class="my-orders-details">
+
+            <mat-accordion class="example-headers-align mt20 ml20" multi>
+              <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Order summary
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    quick report
+                    <mat-icon>assessment</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <app-order-reports></app-order-reports>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [(expanded)]="orderDetailsPanelExpanded">
+                <mat-expansion-panel-header (click)="onOrderToModifyTabClick()">
+                  <mat-panel-title>
+                    Order details
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    check where is your pack
+                    <mat-icon>map</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template #infoText>
+                  <h4>select any order</h4>
+                </ng-template>
+
+                <app-order-detail *ngIf="selectedOrder; else infoText"
+                                  [order]="selectedOrder"
+                                  [isIconVisible]="selectedOrder.driverRequired"></app-order-detail>
+
+                <mat-action-row>
+                  <button mat-raised-button color="primary" (click)="onGetOrderPricing(selectedOrder)">GET Pricing</button>
+                  <button mat-raised-button color="primary" (click)="onPostOrderTiming(selectedOrder)">POST Timing</button>
+                  <button mat-raised-button color="basic" (click)="onOrderToModify(selectedOrder)">Modify</button>
+                  <button mat-raised-button color="warn" (click)="onDeleteOrder(selectedOrder)">Delete</button>
+                </mat-action-row>
+
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [(expanded)]="orderModifyPanelExpanded">
+                <mat-expansion-panel-header (click)="onOrderToAdd()">
+                  <mat-panel-title>
+                    {{ isEditMode ? 'Update the Order' : 'Create a new Order' }}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    find a car
+                    <mat-icon>queue</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!--<div class="dynamic-cmp-container">
+                  <ng-template AddOrderDirective></ng-template>
+                </div>-->
+                <app-order-modify [orderToModify]="selectedOrder" (readOrderList)="readOrderList($event)"></app-order-modify>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+

@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-search.component.css']
 })
 export class OrderSearchComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

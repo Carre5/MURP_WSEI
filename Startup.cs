@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using WSEI_MURP_v1.Models.DataContext;
 
 namespace WSEI_MURP_v1
@@ -62,6 +63,8 @@ namespace WSEI_MURP_v1
                 routes.MapRoute(
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
+
+
             });
 
             app.UseSpa(spa =>
@@ -73,6 +76,7 @@ namespace WSEI_MURP_v1
 
                 if (env.IsDevelopment())
                 {
+                    //spa.UseAngularCliServer(npmScript: "start");
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }
             });

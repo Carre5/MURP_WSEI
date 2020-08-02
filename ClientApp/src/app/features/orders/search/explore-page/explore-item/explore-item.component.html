@@ -1,0 +1,73 @@
+<div fxLayout="column" class="explore-item-container">
+
+  <div fxFlex class="selected_tile" *ngIf="selected">
+    TEST
+  </div>
+
+  <mat-card fxFlex [ngClass]="{'explore-item-card_1': order.priority === 1,
+                          'explore-item-card_2': order.priority === 2,
+                          'explore-item-card_4': order.priority === 4}"
+                          *ngIf="!selected">
+
+
+    <div fxLayout="row" class="explore_item_header">
+      <mat-card-title fxFlex="80%">
+        <div>
+          {{ order.order.location }}
+        </div>
+      </mat-card-title>
+    </div>
+
+
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div fxLayout='row' class="basic_details">
+        <div fxFlex>
+          <mat-list>
+            <mat-list-item>
+              <!--<mat-icon color="primary">where_to_vote</mat-icon>-->
+              <span>Location:&nbsp;</span>
+              <span>{{ order.order.location }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <!--<mat-icon color="primary">play_arrow</mat-icon>-->
+              <span>Date start::&nbsp;</span>
+              <span>{{ order.order.dateStart | date:"dd/MM/yyyy" }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <!--<mat-icon color="primary">stop</mat-icon>-->
+              <span>Date end:&nbsp;</span>
+              <span>{{ order.order.dateEnd | date:"dd/MM/yyyy" }}</span>
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <div fxFlex *ngIf="size2 || size4">
+          <mat-list>
+            <mat-list-item>
+              <!--<mat-icon color="primary">credit_card</mat-icon>-->
+              <span>Price:&nbsp;</span>
+              <span>{{ order.order.priceMin }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <!--<mat-icon color="primary">local_shipping</mat-icon>-->
+              <span>Car:&nbsp;</span>
+              <span>{{ order.order.carID }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <!--<mat-icon color="primary">emoji_people</mat-icon>-->
+              <span>Driver:&nbsp;</span>
+              <span>{{ order.order.driverRequired }}</span>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+      <div fxLayout='row' class="advanced_details" *ngIf="size4">
+        <div fxFlex>
+        </div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
+

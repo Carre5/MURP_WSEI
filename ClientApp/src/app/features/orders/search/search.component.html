@@ -1,1 +1,54 @@
-<p>search works!</p>
+<form class="ml20">
+
+  <h3>Find an order</h3>
+
+  <mat-form-field class="search-full-width">
+    <mat-label>Order option</mat-label>
+    <mat-select>
+      <mat-option>None</mat-option>
+      <mat-option value="time">hours</mat-option>
+      <mat-option value="movePack">rent a car</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br />
+
+  <mat-checkbox>Driver needed</mat-checkbox>
+
+  <mat-form-field>
+    <mat-label>from</mat-label>
+    <input matInput [min]="minFromDate" [max]="maxFromDate" [matDatepicker]="pickerFrom">
+    <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+    <mat-datepicker #pickerFrom></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>to</mat-label>
+    <input matInput [min]="minToDate" [max]="maxToDate" [matDatepicker]="pickerTo">
+    <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+    <mat-datepicker #pickerTo></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="search-full-width">
+    <input matInput placeholder="Starting point">
+    <span matPrefix><mat-icon class="order-icon" color="primary">place</mat-icon></span>
+  </mat-form-field>
+
+  <mat-form-field class="search-full-width">
+    <input matInput placeholder="Destination">
+    <span matPrefix><mat-icon class="order-icon" color="primary">where_to_vote</mat-icon></span>
+  </mat-form-field>
+
+  <mat-form-field class="search-full-width">
+    <mat-label>d</mat-label>
+    <mat-select>
+      <mat-option>None</mat-option>
+      <mat-option value="option1">Option 1</mat-option>
+      <mat-option value="option2">Option 2</mat-option>
+      <mat-option value="option3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
+<button mat-fab class="search-icon ml20">
+  <mat-icon class="order-icon">search</mat-icon>
+</button>

@@ -1,34 +1,35 @@
-<div class="container mb20 ml5 mr20">
-    <a class="order-link" (click)="onSelectedOrder()">  
+<div class="order-item-container mb20 ml5 mr20">
+    <a class="order-link" (click)="onSelectedOrder()">
         <mat-card>
             <mat-card-header>
-                    <div class="order-item-heared">
-                            <mat-card-title class="icon-possition">
-                                <mat-icon class="order-icon" color="primary">local_shipping</mat-icon>
-                                <div>{{ order.name }}</div>
-                            </mat-card-title>
-                    </div>
+                <div class="order-item-heared">
+                    <mat-card-title class="icon-possition">
+                        <mat-icon class="order-icon" color="primary">local_shipping</mat-icon>
+                        <div>{{ order.location }}</div>
+                    </mat-card-title>
+                </div>
             </mat-card-header>
             <mat-card-content>
-                <div class="icon-possition">
-                    <mat-icon class="order-icon" color="primary">event_available</mat-icon>
-                    <div>Start date: </div>
-                    <div class="order-data">{{ order.orderDate }}</div>
-                </div>
-                <div>
-                    <div>Description: </div>
-                    <div class="order-data">{{ order.description }}</div>
-                </div>
-                <div class="icon-possition">
-                    <mat-icon class="order-icon" color="primary">place</mat-icon>
-                    <div>Initial: </div>
-                    <div class="order-data">{{ order.startingPoint }}</div>
-                </div>
-                <div class="icon-possition">
-                    <mat-icon class="order-icon" color="primary">where_to_vote</mat-icon>
-                    <div>Destination: </div>
-                    <div class="order-data">{{ order.destination }}</div>
-                </div>
+              <div class="icon-possition">
+                <mat-icon class="order-icon" color="primary">play_arrow</mat-icon>
+                <div>Start date:&nbsp;</div>
+                <div class="order-data">{{ order.dateStart | date:"dd/MM/yyyy"  }}</div>
+              </div>
+              <div class="icon-possition">
+                <mat-icon class="order-icon" color="primary">stop</mat-icon>
+                <div>End date:&nbsp;</div>
+                <div class="order-data">{{ order.dateEnd | date:"dd/MM/yyyy" }}</div>
+              </div>
+              <div class="icon-possition">
+                <mat-icon class="order-icon" color="primary">where_to_vote</mat-icon>
+                <div>Location:&nbsp;</div>
+                <div class="order-data">{{ order.location }}</div>
+              </div>
+              <div class="icon-possition">
+                <mat-icon class="order-icon" color="primary">credit_card</mat-icon>
+                <div>Price:&nbsp;</div>
+                <div class="order-data">{{ order.priceMin }}</div>
+              </div>
             </mat-card-content>
         </mat-card>
     </a>

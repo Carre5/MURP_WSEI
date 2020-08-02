@@ -1,0 +1,8 @@
+<app-car-details *ngIf="currentSubpage === 'details'"></app-car-details>
+<app-car-form *ngIf="currentSubpage === 'car'"></app-car-form>
+<app-cars-table (click)="changeSubpage('details')" *ngIf="currentSubpage === 'table'"></app-cars-table>
+<div>
+  <button (click)="changeSubpage('car')" *ngIf="currentSubpage === 'table'">Add car </button>
+  <button (click)="changeSubpage('table')" *ngIf="currentSubpage === 'car'">Cancel</button>
+  <button (click)="changeSubpage('table')" *ngIf="currentSubpage === 'details'">Go back</button>
+</div>

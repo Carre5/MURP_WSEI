@@ -1,0 +1,46 @@
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.sidenav-container {
+    flex: 1;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    height: 95%;
+}
+
+.app-window {
+    /*flex: 1;
+  flex-shrink: 0;*/
+}
+
+.search-container {
+    flex: 1;
+    /*  max-width: 350px;*/
+}
+
+.sidenav {
+    padding: 12px;
+    width: 250px;
+    background: white;
+}
+
+.search-content {
+    /*  max-width: 1px;*/
+}
+
+.searchNav {
+    padding: 12px;
+    width: 350px;
+    background: white;
+}

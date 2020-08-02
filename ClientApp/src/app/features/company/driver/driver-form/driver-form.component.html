@@ -1,0 +1,29 @@
+<h2>Add driver</h2>
+<form [formGroup]="driverForm" class="driver-form">
+<label>
+  Name:
+  <input type="text" formControlName="name">
+  <p class="error" *ngIf="driverForm.controls.name.invalid && driverForm.controls.name.dirty">This field is required</p>
+</label>
+<label>
+  Surname:
+  <input type="text" formControlName="surname">
+  <p class="error" *ngIf="driverForm.controls.surname.invalid && driverForm.controls.surname.dirty">This field is required</p>
+</label>
+<label>
+  Phone:
+  <input type="tel" formControlName="phone">
+  <p class="error" *ngIf="driverForm.controls.phone.invalid && driverForm.controls.phone.dirty">This field is required</p>
+</label>
+<label>
+  Email:
+  <input type="email" formControlName="email">
+  <p class="error" *ngIf="driverForm.controls.email.invalid && driverForm.controls.email.dirty">This field is required</p>
+</label>
+<label>
+  Licence:
+  <input type="text" formControlName="licence">
+  <p class="error" *ngIf="driverForm.controls.licence.invalid && driverForm.controls.licence.dirty">This field is required</p>
+</label>
+  <button [disabled]="driverForm.invalid" (click)="submit()">Save</button>
+</form>

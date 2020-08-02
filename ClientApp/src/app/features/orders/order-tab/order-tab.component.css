@@ -1,0 +1,9 @@
+.order-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.orders-tab-panel {
+  height: 100%;
+}

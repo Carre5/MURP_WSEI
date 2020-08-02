@@ -1,0 +1,8 @@
+<app-driver-details *ngIf="currentSubpage === 'details'"></app-driver-details>
+<app-driver-form *ngIf="currentSubpage === 'driver'"></app-driver-form>
+<app-drivers-table (click)="changeSubpage('details')" *ngIf="currentSubpage === 'table'"></app-drivers-table>
+<div>
+  <button (click)="changeSubpage('driver')" *ngIf="currentSubpage === 'table'">Add driver </button>
+  <button (click)="changeSubpage('table')" *ngIf="currentSubpage === 'driver'">Cancel</button>
+  <button (click)="changeSubpage('table')" *ngIf="currentSubpage === 'details'">Go back</button>
+</div>

@@ -1,0 +1,35 @@
+<div class="report-container">
+  <div class="report-tiles" fxLayout="row">
+    <a class="order-link mr10" fxFlex="20" (click)="onTheNextOrder(nextOrder)">
+      <mat-card class="report-next">
+        <h2>
+          {{ nextOrderLabel }}</h2>
+        <p class="report-content">{{ next }}</p>
+</mat-card>
+    </a>
+    <a class="order-link mr10" fxFlex="20">
+      <mat-card class="report-new">
+        <h2>New</h2>
+        <p class="report-content">{{ new }}</p>
+      </mat-card>
+    </a>
+    <a class="order-link mr10" fxFlex="20">
+      <mat-card class="report-pending">
+        <h2>Pending</h2>
+        <p class="report-content">{{ inProgress }}</p>
+      </mat-card>
+    </a>
+    <a class="order-link mr10" fxFlex="20">
+      <mat-card class="report-onhold">
+        <h2>On hold</h2>
+        <p class="report-content">{{ onHold }}</p>
+      </mat-card>
+    </a>
+    <a class="order-link mr10" fxFlex="20">
+      <mat-card class="report-finished">
+        <h2>Finished</h2>
+        <p class="report-content">{{ finished }}</p>
+      </mat-card>
+    </a>
+  </div>
+</div>

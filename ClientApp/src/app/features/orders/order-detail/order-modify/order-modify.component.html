@@ -1,0 +1,153 @@
+<div class="order-modify-container" fxLayout='column'>
+  <button mat-button type="button" (click)="readDefaults()">Read default</button>
+  <form [formGroup]="orderForm" #postOrderForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-vertical-stepper [linear]="false" #stepper fxFlexFill>
+      <mat-step>
+        <ng-template matStepLabel>Order data</ng-template>
+
+        <mat-form-field class="mr20">
+          <mat-label>Location</mat-label>
+          <input matInput name="location" placeholder="start address" formControlName="location">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Description</mat-label>
+          <input matInput name="description" placeholder="short text please" formControlName="description">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Status</mat-label>
+          <mat-select name="status" formControlName="status">
+            <mat-option value="1">new</mat-option>
+            <mat-option value="2">on hold</mat-option>
+            <mat-option value="3">ready</mat-option>
+            <mat-option value="4">in progress</mat-option>
+            <mat-option value="5">pricing</mat-option>
+            <mat-option value="6">resolved</mat-option>
+            <mat-option value="7">withdrawn</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>from</mat-label>
+          <input matInput name="dateStart" [min]="minFromDate" [max]="maxFromDate" [matDatepicker]="pickerFrom" formControlName="dateStart">
+          <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+          <mat-datepicker #pickerFrom></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>to</mat-label>
+          <input matInput name="dateEnd" [min]="minToDate" [max]="maxToDate" [matDatepicker]="pickerTo" formControlName="dateEnd">
+          <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+          <mat-datepicker #pickerTo></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Price min</mat-label>
+          <input matInput name="priceMin" formControlName="priceMin" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Price max</mat-label>
+          <input matInput name="priceMax" formControlName="priceMax" type="number">
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperNext type="button">Next</button>
+        </div>
+      </mat-step>
+
+
+      <mat-step>
+        <ng-template matStepLabel>Company data</ng-template>
+
+        <mat-form-field class="mr20">
+          <mat-label>Company ID</mat-label>
+          <input matInput name="companyID" formControlName="companyID" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Company name</mat-label>
+          <input matInput name="companyName" placeholder="model" formControlName="companyName">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Car ID</mat-label>
+          <input matInput name="carID" formControlName="carID" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Car registration number</mat-label>
+          <input matInput name="carRegistrationNumber" formControlName="carRegistrationNumber">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Car model</mat-label>
+          <input matInput name="carModel" placeholder="model" formControlName="carModel">
+        </mat-form-field>
+
+        <mat-checkbox name="driverRequired" class="mr20" formControlName="driverRequired">Driver needed</mat-checkbox>
+
+        <div class="mt20">
+          <button mat-button matStepperPrevious type="button">Back</button>
+          <button mat-button matStepperNext type="button">Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Tech data - will be provided by tool, now please fill manualy</ng-template>
+        <mat-form-field class="mr20">
+          <mat-label>OrderID</mat-label>
+          <input matInput name="orderID" formControlName="orderID" value="20052019000004">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Creation date</mat-label>
+          <input matInput name="creationDate" formControlName="creationDate" [matDatepicker]="pickerInput">
+          <mat-datepicker-toggle matSuffix [for]="pickerInput"></mat-datepicker-toggle>
+          <mat-datepicker #pickerInput></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Start timing</mat-label>
+          <input matInput name="startTiming" formControlName="startTiming" [matDatepicker]="pickerStartTiming">
+          <mat-datepicker-toggle matSuffix [for]="pickerStartTiming"></mat-datepicker-toggle>
+          <mat-datepicker #pickerStartTiming></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>End timing</mat-label>
+          <input matInput name="endTiming" formControlName="endTiming" [matDatepicker]="pickerEndTiming">
+          <mat-datepicker-toggle matSuffix [for]="pickerEndTiming"></mat-datepicker-toggle>
+          <mat-datepicker #pickerEndTiming></mat-datepicker>
+        </mat-form-field>
+
+        <mat-checkbox name="wasStartedTiming" class="mr20" formControlName="wasStartedTiming">Was started timing?</mat-checkbox>
+
+        <mat-form-field class="mr20">
+          <mat-label>Kilometers taken</mat-label>
+          <input matInput name="kilometersTaken" formControlName="kilometersTaken" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="mr20">
+          <mat-label>Priority</mat-label>
+          <input matInput name="priority" formControlName="priority" type="number">
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious type="button">Back</button>
+          <button mat-button matStepperNext type="button">Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-raised-button color="accent" type="submit">{{ isEdited ? 'Update the Order' : 'Create a new Order' }}</button>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+  </form>
+</div>

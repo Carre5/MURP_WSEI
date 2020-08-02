@@ -1,6 +1,9 @@
-<app-order-item
-    *ngFor="let orderItem of orders"
-    [order]="orderItem"
-    (orderSelected)="onOrderSelected(orderItem)">
-
-</app-order-item>
+<div class="order-list-container">
+  <mat-progress-spinner mode="indeterminate" value=25 *ngIf="spinnerService.visibility | async">
+  </mat-progress-spinner>
+  <app-order-item class="order-list" *ngFor="let orderItem of orders"
+                  [order]="orderItem"
+                  (orderSelected)="onOrderSelected(orderItem)"
+                  (changeOrder)="getAllOrders()">
+  </app-order-item>
+</div>

@@ -7,9 +7,13 @@
     width: 25%;
 }
 
+agm-map {
+  height: 300px;
+}
+
 .icon-possition {
-    display:flex; 
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .mat-icon {

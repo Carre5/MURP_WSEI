@@ -1,0 +1,32 @@
+.explore-item-container {
+  height: 100%;
+  width: 100%;
+}
+
+.explore_item_header {
+    align-items: center;
+}
+
+.mat-list-item {
+  max-height: 1.5em;
+  padding: 0px;
+}
+
+.mat-icon {
+  margin-right: 15px;
+}
+
+.explore-item-card {
+}
+
+.explore-item-card_1 {
+  background-color: palegreen;
+}
+
+.explore-item-card_2 {
+  background-color: aquamarine;
+}
+
+.explore-item-card_4 {
+  background-color: darkturquoise;
+}

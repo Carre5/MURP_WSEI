@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from '../../shared/components/layout/layout.component';
+import { LayoutComponent } from './layout/layout.component';
 import { childRoutes } from './child-routes';
-
 
 const routes: Routes = [
   {
@@ -22,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule {}
+export class AdminRoutingModule { }
